@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         String[] nouns = FileUtils.getLines(listNouns);
+
         setContentView(R.layout.activity_main);
     }
 }

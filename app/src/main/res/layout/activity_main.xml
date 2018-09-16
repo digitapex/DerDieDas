@@ -16,10 +16,11 @@
         android:layout_weight="2"
         android:gravity="center">
         <TextView
+            android:id="@+id/nounView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Haus"
-            android:textSize="90sp"/>
+            android:textSize="50sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -27,22 +28,28 @@
         android:layout_height="0dp"
         android:layout_weight="1">
         <Button
+            android:tag="m"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Der"
+            android:onClick="onButton"
             android:textSize="20sp"/>
         <Button
+            android:tag="n"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Das"
+            android:onClick="onButton"
             android:textSize="20sp"/>
         <Button
+            android:tag="f"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Die"
+            android:onClick="onButton"
             android:textSize="20sp"/>
     </LinearLayout>
 

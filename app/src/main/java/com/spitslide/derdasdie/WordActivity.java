@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
-public class WordActivity extends AppCompatActivity {
+public class WordActivity extends ThemedActivity {
 
     private String gender;
     private TextView nounView;

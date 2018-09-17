@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="buttonTextNormal" format="reference|color" />
+    <attr name="buttonTextPressed" format="reference|color" />
+
+    <attr name="button_drawable" format="reference" />
+
+</resources>

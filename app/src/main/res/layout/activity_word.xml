@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4"
+
+    tools:context="com.spitslide.derdasdie.WordActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/nounView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Haus"
+            android:textColor="@android:color/black"
+            android:textSize="50sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:layout_weight="2">
+        <Button
+            android:tag="m"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/selectors_background"
+            android:textColor="@drawable/selectors_text_color"
+            android:layout_weight="1"
+            android:text="Der"
+            android:onClick="onButton"
+            android:textSize="20sp"/>
+        <Button
+            android:tag="n"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/selectors_background"
+            android:textColor="@drawable/selectors_text_color"
+            android:layout_weight="1"
+            android:text="Das"
+            android:onClick="onButton"
+            android:textSize="20sp"/>
+        <Button
+            android:tag="f"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/selectors_background"
+            android:textColor="@drawable/selectors_text_color"
+            android:layout_weight="1"
+            android:text="Die"
+            android:onClick="onButton"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

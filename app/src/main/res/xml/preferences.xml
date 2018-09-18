@@ -4,9 +4,7 @@
         android:key="theme"
         android:summary="Change theme"
         android:title="Light theme"
-        android:defaultValue="false"
-
-        />
+        android:defaultValue="false" />
 
 
 </android.support.v7.preference.PreferenceScreen>

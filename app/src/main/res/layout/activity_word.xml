@@ -31,7 +31,7 @@
         android:orientation="vertical"
         android:layout_weight="2">
         <Button
-            android:tag="m"
+            android:id="@+id/m"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,7 +42,7 @@
             android:onClick="onButton"
             android:textSize="20sp"/>
         <Button
-            android:tag="n"
+            android:id="@+id/n"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -53,7 +53,7 @@
             android:onClick="onButton"
             android:textSize="20sp"/>
         <Button
-            android:tag="f"
+            android:id="@+id/f"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

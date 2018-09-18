@@ -1,8 +1,8 @@
 package com.spitslide.derdasdie;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class WordActivity extends ThemedActivity {
 
-    private String gender;
+    private String correctGender;
     private TextView nounView;
 
     @Override
@@ -27,15 +27,19 @@ public class WordActivity extends ThemedActivity {
         String[] nouns = FileUtils.getLines(listNouns);
         String randomNoun = nouns[new Random().nextInt(100)];
         String noun = randomNoun.split(",")[0];
-        gender = randomNoun.split(",")[1];
+        correctGender = randomNoun.split(",")[1];
         nounView.setText(noun);
 
     }
 
     public void onButton(View view) {
-        String buttonGender = view.getTag().toString();
-        if (buttonGender.equals(gender)) {
-            nounView.setText(GenderConvert.toFullGender(gender) + " " + nounView.getText());
+        String pressedButtonGender = getResources().getResourceEntryName(view.getId());
+        if (pressedButtonGender.equals(correctGender)) {
+            nounView.setText(GenderConvert.toFullGender(correctGender) + " " + nounView.getText());
+        } else {
+            int idResource = getResources().getIdentifier(correctGender, "id", getPackageName());
+            Button correctButton = findViewById(idResource);
+            AnimationUtil.animateButtonDrawable(this, correctButton);
         }
     }
 }

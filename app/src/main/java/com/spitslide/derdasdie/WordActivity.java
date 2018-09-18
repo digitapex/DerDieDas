@@ -38,11 +38,16 @@ public class WordActivity extends ThemedActivity {
         if (pressedButtonGender.equals(correctGender)) {
             nounView.setText(GenderConvert.toFullGender(correctGender) + " " + nounView.getText());
             pressedButton.setBackgroundResource(R.drawable.button_correct);
+            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
         } else {
             int idResource = getResources().getIdentifier(correctGender, "id", getPackageName());
             Button correctButton = findViewById(idResource);
             AnimationUtil.animateButtonDrawable(this, correctButton);
+            AnimationUtil.animateTextColor(correctButton, this);
             pressedButton.setBackgroundResource(R.drawable.button_wrong);
+            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
+
+
         }
     }
 }

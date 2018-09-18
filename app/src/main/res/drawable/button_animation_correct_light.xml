@@ -1,0 +1,12 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <!-- ?attr also doesn't work here so we need to have two sets of animation-list -->
+    <item android:drawable="@drawable/button_normal_light" android:duration="200" />
+    <item android:drawable="@drawable/button_correct" android:duration="200" />
+    <item android:drawable="@drawable/button_normal_light" android:duration="200" />
+    <item android:drawable="@drawable/button_correct" android:duration="200" />
+    <item android:drawable="@drawable/button_normal_light" android:duration="200" />
+    <item android:drawable="@drawable/button_correct" android:duration="200" />
+    <item android:drawable="@drawable/button_normal_light" android:duration="200" />
+    <item android:drawable="@drawable/button_correct" android:duration="200" />
+</animation-list>

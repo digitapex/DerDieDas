@@ -2,6 +2,8 @@ package com.spitslide.derdasdie;
 
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.TypedValue;
 
 public class ThemeUtil {
 
@@ -22,4 +24,30 @@ public class ThemeUtil {
             context.setTheme(R.style.AppTheme);
         }
     }
+
+    public static int getPressedButtonTxtColorAttr(Context context) {
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(R.attr.buttonTextPressed, typedValue, true);
+        int color = typedValue.data;
+        return color;
+    }
+
+    public static int getNormalButtonTxtColorAttr(Context context) {
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(R.attr.buttonTextNormal, typedValue, true);
+        int color = typedValue.data;
+        return color;
+    }
+
+    public static int getAnimation(Context context) {
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(R.attr.button_animation, typedValue, true);
+//        int color = typedValue.data;
+        int drawableId = typedValue.resourceId;
+        return drawableId;
+    }
+
 }

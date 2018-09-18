@@ -33,13 +33,16 @@ public class WordActivity extends ThemedActivity {
     }
 
     public void onButton(View view) {
+        Button pressedButton = (Button) view;
         String pressedButtonGender = getResources().getResourceEntryName(view.getId());
         if (pressedButtonGender.equals(correctGender)) {
             nounView.setText(GenderConvert.toFullGender(correctGender) + " " + nounView.getText());
+            pressedButton.setBackgroundResource(R.drawable.button_correct);
         } else {
             int idResource = getResources().getIdentifier(correctGender, "id", getPackageName());
             Button correctButton = findViewById(idResource);
             AnimationUtil.animateButtonDrawable(this, correctButton);
+            pressedButton.setBackgroundResource(R.drawable.button_wrong);
         }
     }
 }

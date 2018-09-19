@@ -7,6 +7,5 @@
         android:duration="150"
         android:repeatCount="5"
         android:repeatMode="reverse"
-
         />
 </set>

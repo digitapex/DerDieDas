@@ -42,7 +42,7 @@ public class AnimationUtil {
     }
 
     static void animateJumpAndSlide(final Context context, final View nounView, boolean isCorrectAnswer) {
-        Animation jumpAnim = AnimationUtils.loadAnimation(context, R.anim.jump_and_slide);
+        Animation jumpAnim = AnimationUtils.loadAnimation(context, R.anim.jump_animation);
         final Animation waitAnimation = AnimationUtils.loadAnimation(context, R.anim.wait_animation);
         waitAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override

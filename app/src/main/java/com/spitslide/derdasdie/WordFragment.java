@@ -34,9 +34,7 @@ public class WordFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        // TODO - what happens without this
         super.onViewCreated(view, savedInstanceState);
-
         String listNouns = null;
         try {
             listNouns = FileUtils.getNounList(getActivity());
@@ -48,8 +46,6 @@ public class WordFragment extends Fragment implements View.OnClickListener {
         String noun = randomNoun.split(",")[0];
         correctGender = randomNoun.split(",")[1];
         nounView.setText(noun);
-
-
 
     }
 

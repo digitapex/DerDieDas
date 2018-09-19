@@ -5,6 +5,9 @@ import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 public class AnimationUtil {
@@ -13,6 +16,7 @@ public class AnimationUtil {
         button.setBackgroundResource(ThemeUtil.getAnimation(context));
         AnimationDrawable buttonAnimation = (AnimationDrawable) button.getBackground();
         buttonAnimation.start();
+
     }
 
 
@@ -37,4 +41,47 @@ public class AnimationUtil {
         colorAnim.setDuration(duration);
         colorAnim.start();
     }
+
+    static void animateJumpAndSlide(final Context context, final View nounView, boolean isCorrectAnswer) {
+        Animation jumpAnim = AnimationUtils.loadAnimation(context, R.anim.jump_and_slide);
+        final Animation slideLeftAnim = AnimationUtils.loadAnimation(context, android.R.anim.slide_out_right);
+        final Animation slideRightAnim = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+        slideLeftAnim.setFillAfter(true);
+        slideLeftAnim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                nounView.startAnimation(slideRightAnim);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+
+        jumpAnim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                nounView.startAnimation(slideLeftAnim);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+
+        // if correct answer, we do jump and after that slide, if wrong, then we just slide after button flashing
+        if (isCorrectAnswer) {
+            nounView.startAnimation(jumpAnim);
+        } else {
+            // this number is the sum of durations in button_animation_correct xml files (we slide after the flashing of the correct button ended)
+            slideLeftAnim.setStartOffset(1600);
+            nounView.startAnimation(slideLeftAnim);
+        }
+
+    }
+
 }

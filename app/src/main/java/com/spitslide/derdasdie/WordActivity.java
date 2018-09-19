@@ -36,16 +36,18 @@ public class WordActivity extends ThemedActivity {
         Button pressedButton = (Button) view;
         String pressedButtonGender = getResources().getResourceEntryName(view.getId());
         if (pressedButtonGender.equals(correctGender)) {
-            nounView.setText(GenderConvert.toFullGender(correctGender) + " " + nounView.getText());
+//            nounView.setText(GenderConvert.toFullGender(correctGender) + " " + nounView.getText());
             pressedButton.setBackgroundResource(R.drawable.button_correct);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
+            AnimationUtil.animateJumpAndSlide(this, nounView, true);
         } else {
             int idResource = getResources().getIdentifier(correctGender, "id", getPackageName());
             Button correctButton = findViewById(idResource);
             AnimationUtil.animateButtonDrawable(this, correctButton);
-            // animating text colod not working on real device, but works in emulator, so better to just animate background
+            // animating text color not working on real device, but works in emulator, so better to just animate background
 //            AnimationUtil.animateTextColor(correctButton, this);
             pressedButton.setBackgroundResource(R.drawable.button_wrong);
+            AnimationUtil.animateJumpAndSlide(this, nounView, false);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
 
 

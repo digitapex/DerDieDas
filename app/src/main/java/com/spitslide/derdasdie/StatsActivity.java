@@ -4,12 +4,10 @@ package com.spitslide.derdasdie;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -31,6 +29,8 @@ public class StatsActivity extends ThemedActivity {
     private void setupChart() {
         LineChart chart = findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<>();
+
+        // TODO - if 0 entries
         entries.add(new Entry(1, 1));
 
         LineDataSet dataSet = new LineDataSet(entries, "");

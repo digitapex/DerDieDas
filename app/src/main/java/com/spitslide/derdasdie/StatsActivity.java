@@ -1,6 +1,7 @@
 package com.spitslide.derdasdie;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class StatsActivity extends ThemedActivity {
         LineChart chart = findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<>();
         entries.add(new Entry(1, 1));
+
         LineDataSet dataSet = new LineDataSet(entries, "");
         dataSet.setDrawCircles(false);
 
@@ -45,6 +47,8 @@ public class StatsActivity extends ThemedActivity {
 
         // prevents from showing 105 %
         chart.getAxisLeft().setSpaceTop(5);
+        chart.getAxisLeft().setTextColor(ThemeUtil.getNormalButtonTxtColorAttr(this));
+        chart.getAxisLeft().setGridColor(Color.RED);
         chart.getAxisLeft().setDrawZeroLine(true);
         chart.getAxisLeft().setLabelCount(20);
         chart.getAxisLeft().setValueFormatter(new IAxisValueFormatter() {

@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".WordActivity"/>
         <activity android:name=".SettingsActivity"/>
+        <activity android:name=".StatsActivity"/>
     </application>
 
 </manifest>

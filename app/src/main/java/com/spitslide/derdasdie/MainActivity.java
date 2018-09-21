@@ -18,11 +18,18 @@ public class MainActivity extends ThemedActivity {
 
     public void onButton(View view) {
         String activity = view.getTag().toString();
-        if (activity.equals("practice")) {
-            startActivity(new Intent(this, WordActivity.class));
-        } else if (activity.equals("settings")) {
-            startActivity(new Intent(this, SettingsActivity.class));
+        switch (activity) {
+            case "practice":
+                startActivity(new Intent(this, WordActivity.class));
+                break;
+            case "settings":
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+            case "stats":
+                startActivity(new Intent(this, StatsActivity.class));
+                break;
         }
+
     }
 
 

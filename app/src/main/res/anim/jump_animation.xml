@@ -8,4 +8,10 @@
         android:repeatCount="5"
         android:repeatMode="reverse"
         />
+
+    <!-- there's lag at the very end of animation when replacing fragment, so we add a bit of a wait time here -->
+    <translate
+        android:duration="200"
+        android:startOffset="900"
+        />
 </set>

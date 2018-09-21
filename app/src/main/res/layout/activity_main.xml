@@ -27,4 +27,14 @@
         android:text="Settings"
         android:onClick="onButton"
         android:textSize="20sp"/>
+    <Button
+        android:tag="stats"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/button_drawable"
+        android:textColor="@drawable/selectors_text_color"
+        android:text="Stats"
+        android:onClick="onButton"
+        android:textSize="20sp"/>
 </LinearLayout>

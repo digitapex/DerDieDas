@@ -11,15 +11,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
-import java.util.Random;
+
+import static android.media.CamcorderProfile.get;
 
 public class WordFragment extends Fragment implements View.OnClickListener {
 
     private String correctGender;
     TextView nounView;
     private View v;
+    private String noun;
+    private Noun currentNoun;
+    private List<Noun> currentNounList;
 
     @Nullable
     @Override
@@ -38,11 +41,12 @@ public class WordFragment extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 //        List<Noun> nouns = new DatabaseUtil(getActivity()).getAllNouns();
 //        Noun random = nouns.get(new Random().nextInt(nouns.size()));
-        Noun nounObj = new DatabaseUtil(getActivity()).getFirstNoun();
-        String noun = nounObj.getNoun();
-        correctGender = nounObj.getGender();
+//        currentNoun = new DatabaseUtil(getActivity()).getFirstNoun();
+        currentNounList = ((WordActivity) getActivity()).getCurrentNounList();
+        currentNoun = currentNounList.get(0);
+        noun = currentNoun.getNoun();
+        correctGender = currentNoun.getGender();
         nounView.setText(noun);
-
     }
 
     @Override
@@ -54,7 +58,7 @@ public class WordFragment extends Fragment implements View.OnClickListener {
             pressedButton.setBackgroundResource(R.drawable.button_correct);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, true);
-//            SpacedRepetitionModel.reinsertWord();
+            SpacedRepetitionModel.updateGlobalNounList(getActivity(), currentNounList, currentNoun, true);
         } else {
             int idResource = getResources().getIdentifier(correctGender, "id", getActivity().getPackageName());
             Button correctButton = v.findViewById(idResource);
@@ -64,6 +68,7 @@ public class WordFragment extends Fragment implements View.OnClickListener {
             pressedButton.setBackgroundResource(R.drawable.button_wrong);
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, false);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
+            SpacedRepetitionModel.updateGlobalNounList(getActivity(), currentNounList, currentNoun, false);
 
 
         }

@@ -52,11 +52,18 @@ public class DatabaseUtil {
 
     public void addAllNouns(List<Noun> nouns) {
         database.beginTransaction();
+        database.delete(NOUNS_TABLE, null, null);
         ContentValues contentValues = new ContentValues();
         for (Noun noun : nouns) {
             contentValues.put("noun", noun.getNoun());
             contentValues.put("gender", noun.getGender());
+            // TODO - both insert for the first time and update if later
             database.insert(NOUNS_TABLE, null, contentValues);
+//            database.update(NOUNS_TABLE, contentValues, null, null);
+//            int id = (int)database.insertWithOnConflict(NOUNS_TABLE, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
+//            if (id == -1) {
+//                database.update(NOUNS_TABLE, contentValues, null, null);
+//            }
         }
         database.setTransactionSuccessful();
         database.endTransaction();

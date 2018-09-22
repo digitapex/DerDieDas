@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.Random;
 
 public class WordFragment extends Fragment implements View.OnClickListener {
@@ -35,16 +36,11 @@ public class WordFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String listNouns = null;
-        try {
-            listNouns = FileUtils.getNounList(getActivity());
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        String[] nouns = FileUtils.getLines(listNouns);
-        String randomNoun = nouns[new Random().nextInt(100)];
-        String noun = randomNoun.split(",")[0];
-        correctGender = randomNoun.split(",")[1];
+//        List<Noun> nouns = new DatabaseUtil(getActivity()).getAllNouns();
+//        Noun random = nouns.get(new Random().nextInt(nouns.size()));
+        Noun nounObj = new DatabaseUtil(getActivity()).getFirstNoun();
+        String noun = nounObj.getNoun();
+        correctGender = nounObj.getGender();
         nounView.setText(noun);
 
     }
@@ -58,6 +54,7 @@ public class WordFragment extends Fragment implements View.OnClickListener {
             pressedButton.setBackgroundResource(R.drawable.button_correct);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, true);
+//            SpacedRepetitionModel.reinsertWord();
         } else {
             int idResource = getResources().getIdentifier(correctGender, "id", getActivity().getPackageName());
             Button correctButton = v.findViewById(idResource);

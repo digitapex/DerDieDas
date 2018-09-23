@@ -63,7 +63,7 @@ public class MainActivity extends ThemedActivity {
             }
             String[] nouns = FileUtils.getLines(listNouns);
 
-            List<Noun> nounList = new ArrayList<>();
+            final List<Noun> nounList = new ArrayList<>();
             for (String line : nouns) {
                 String noun = line.split(",")[0];
                 String gender = line.split(",")[1];
@@ -71,7 +71,12 @@ public class MainActivity extends ThemedActivity {
                 nounList.add(nounObject);
             }
 
-            new DatabaseUtil(this).addAllNouns(nounList);
+            new Thread(){
+                @Override
+                public void run() {
+                    new DatabaseUtil(MainActivity.this).addAllNouns(nounList);
+                }
+            }.start();
 
             prefs.edit().putBoolean("firstrun", false).apply();
         }

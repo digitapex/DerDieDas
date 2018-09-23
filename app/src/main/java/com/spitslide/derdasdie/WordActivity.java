@@ -38,6 +38,11 @@ public class WordActivity extends ThemedActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        new DatabaseUtil(this).addAllNouns(nounList);
+        new Thread(){
+            @Override
+            public void run() {
+                new DatabaseUtil(WordActivity.this).addAllNouns(nounList);
+            }
+        }.start();
     }
 }

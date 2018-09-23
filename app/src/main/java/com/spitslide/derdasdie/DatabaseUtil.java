@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,7 @@ public class DatabaseUtil {
         for (Noun noun : nouns) {
             contentValues.put("noun", noun.getNoun());
             contentValues.put("gender", noun.getGender());
+            contentValues.put("times_answered", noun.getTimesAnswered());
             // TODO - both insert for the first time and update if later
             database.insert(NOUNS_TABLE, null, contentValues);
 //            database.update(NOUNS_TABLE, contentValues, null, null);
@@ -71,10 +73,10 @@ public class DatabaseUtil {
 
     public List<Noun> getAllNouns() {
         List<Noun> nouns = new ArrayList<>();
-        String[] columns = new String[]{"noun", "gender"};
+        String[] columns = new String[]{"noun", "gender", "times_answered"};
         Cursor cursor = database.query(NOUNS_TABLE, columns, null, null, null, null, null);
         while (cursor.moveToNext()) {
-            Noun noun = new Noun(cursor.getString(0), cursor.getString(1));
+            Noun noun = new Noun(cursor.getString(0), cursor.getString(1), cursor.getInt(2));
             nouns.add(noun);
         }
         cursor.close();
@@ -82,17 +84,17 @@ public class DatabaseUtil {
     }
 
     public Noun getFirstNoun(){
-        String[] columns = new String[]{"noun", "gender"};
+        String[] columns = new String[]{"noun", "gender", "times_answered"};
         String limit = "1";
         Cursor cursor = database.query(NOUNS_TABLE, columns, null, null, null, null, null, limit);
         Noun noun;
         if (cursor != null) {
             cursor.moveToFirst();
-            noun = new Noun(cursor.getString(0), cursor.getString(1));
+            noun = new Noun(cursor.getString(0), cursor.getString(1), cursor.getInt(0));
             cursor.close();
         } else {
             // TODO - if no more words
-            noun = new Noun("", "");
+            noun = new Noun("", "", 0);
         }
         return noun;
     }
@@ -104,7 +106,7 @@ public class DatabaseUtil {
         private static final String DATABASE_NAME = "Database";
         private static final int DATABASE_VERSION = 1;
         private static final String CREATE_SCORES_TABLE = "CREATE TABLE IF NOT EXISTS " + SCORES_TABLE + " (_id INTEGER PRIMARY KEY, score INTEGER);";
-        private static final String CREATE_NOUNS_TABLE = "CREATE TABLE IF NOT EXISTS " + NOUNS_TABLE + " (_id INTEGER PRIMARY KEY, noun TEXT, gender TEXT);";
+        private static final String CREATE_NOUNS_TABLE = "CREATE TABLE IF NOT EXISTS " + NOUNS_TABLE + " (_id INTEGER PRIMARY KEY, noun TEXT, gender TEXT, times_answered INTEGER);";
 
         DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);

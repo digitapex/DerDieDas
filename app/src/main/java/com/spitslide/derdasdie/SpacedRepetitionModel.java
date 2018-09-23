@@ -1,57 +1,42 @@
 package com.spitslide.derdasdie;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class SpacedRepetitionModel {
 
-    private static final int REPETITION_FOR_WRONG = 10;
-    private static final int REPETITION_FOR_CORRECT = 20;
-    private static final float PROBABILITY_WHEN_CORRECT = 0.6f;
-    private static ArrayList<String> updatingList;
+    private static final int REPETITION_FOR_WRONG = 2;
+    private static final int REPETITION_FOR_CORRECT = 5;
+    private static final int TIMES_TO_ANSWER_TO_REMOVE = 5;
 
     public static void updateGlobalNounList(Context context, List<Noun> nounList, Noun noun, boolean isCorrect) {
-//        DatabaseUtil databaseUtil = new DatabaseUtil(context);
-////        int lastScore = databaseUtil.getLastScore();
-////        updatingList = arrayList;
-////        if (updatingList.size() == 0) {
-////            return;
-////        }
-//
-//        List<Noun> nounsFromDb = databaseUtil.getAllNouns();
-
+        if (nounList.size() == 0) {
+            return;
+        }
         nounList.remove(0);
         if (!isCorrect) {
+            noun.setTimesAnswered(0);
             nounList.add(REPETITION_FOR_WRONG <= nounList.size() ? REPETITION_FOR_WRONG : nounList.size(), noun);
         } else {
-            float random = new Random().nextFloat();
-            if (random <= PROBABILITY_WHEN_CORRECT) {
+            noun.setTimesAnswered(noun.getTimesAnswered() + 1);
+            if(noun.getTimesAnswered() < TIMES_TO_ANSWER_TO_REMOVE) {
                 nounList.add(REPETITION_FOR_CORRECT <= nounList.size() ? REPETITION_FOR_CORRECT : nounList.size(), noun);
             }
         }
         ((WordActivity)context).updateNounList(nounList);
-//        databaseUtil.addAllNouns(nounsFromDb);
-
-//        String currentElement = updatingList.get(0);
-//        updatingList.remove(0);
-//
-//        if (!isCorrect) {
-//            updatingList.add(REPETITION_FOR_WRONG <= updatingList.size() ? REPETITION_FOR_WRONG : updatingList.size(), currentElement);
-////            databaseUtil.addScore(lastScore == 0 ? 0 : lastScore - 1);
-//        } else {
-////            databaseUtil.addScore(lastScore + 1);
-//            float random = new Random().nextFloat();
-//            if (random <= PROBABILITY_WHEN_CORRECT) {
-//                updatingList.add(REPETITION_FOR_CORRECT <= updatingList.size() ? REPETITION_FOR_CORRECT : updatingList.size(), currentElement);
-//            }
-//        }
     }
 
-    static ArrayList<String> getUpdatedList(){
-        return updatingList;
+    public static void updateScore(Context context, boolean isCorrect) {
+        DatabaseUtil databaseUtil = new DatabaseUtil(context);
+        int lastScore = databaseUtil.getLastScore();
+        if (!isCorrect) {
+            databaseUtil.addScore(lastScore == 0 ? 0 : lastScore - 1);
+        } else {
+            databaseUtil.addScore(lastScore + 1);
+        }
     }
 }

@@ -5,10 +5,12 @@ public class Noun {
 
     private String noun;
     private String gender;
+    private int timesAnswered;
 
-    public Noun(String noun, String gender) {
+    public Noun(String noun, String gender, int timesAnswered) {
         this.noun = noun;
         this.gender = gender;
+        this.timesAnswered = timesAnswered;
     }
 
     public String getNoun() {
@@ -27,4 +29,11 @@ public class Noun {
         this.gender = gender;
     }
 
+    public int getTimesAnswered() {
+        return timesAnswered;
+    }
+
+    public void setTimesAnswered(int timesAnswered) {
+        this.timesAnswered = timesAnswered;
+    }
 }

@@ -3,17 +3,14 @@ package com.spitslide.derdasdie;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends ThemedActivity {
     @Override
@@ -67,7 +64,7 @@ public class MainActivity extends ThemedActivity {
             for (String line : nouns) {
                 String noun = line.split(",")[0];
                 String gender = line.split(",")[1];
-                Noun nounObject = new Noun(noun, gender);
+                Noun nounObject = new Noun(noun, gender, 0);
                 nounList.add(nounObject);
             }
 

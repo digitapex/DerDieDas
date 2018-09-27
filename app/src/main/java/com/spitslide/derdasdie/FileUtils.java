@@ -27,4 +27,8 @@ public class FileUtils {
     static String[] getLines(String string){
         return string.split("\\r?\\n");
     }
+
+    static int getNounsCount(Context context) throws UnsupportedEncodingException {
+        return getLines(getNounList(context)).length;
+    }
 }

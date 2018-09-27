@@ -2,6 +2,7 @@ package com.spitslide.derdasdie;
 
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -58,7 +59,8 @@ public class WordFragment extends Fragment implements View.OnClickListener {
             pressedButton.setBackgroundResource(R.drawable.button_correct);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, true);
-            SpacedRepetitionModel.updateGlobalNounList(getActivity(), currentNounList, currentNoun, true);
+            updateScore(true);
+            updateList(true);
         } else {
             int idResource = getResources().getIdentifier(correctGender, "id", getActivity().getPackageName());
             Button correctButton = v.findViewById(idResource);
@@ -68,9 +70,26 @@ public class WordFragment extends Fragment implements View.OnClickListener {
             pressedButton.setBackgroundResource(R.drawable.button_wrong);
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, false);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
-            SpacedRepetitionModel.updateGlobalNounList(getActivity(), currentNounList, currentNoun, false);
+            updateScore(false);
+            updateList(false);
+
 
 
         }
+    }
+
+    private void updateScore(boolean isCorrect) {
+        DatabaseUtil databaseUtil = new DatabaseUtil(getActivity());
+        SpacedRepetitionModel model = new SpacedRepetitionModel();
+        float oldScore = databaseUtil.getLastScore();
+        float newScore = model.getNewScore(oldScore, currentNoun, isCorrect);
+        databaseUtil.addScore(newScore);
+    }
+
+    private void updateList(boolean isCorrect) {
+        SpacedRepetitionModel model = new SpacedRepetitionModel();
+        List<Noun> newList = model.getUpdatedNounList(currentNounList, currentNoun, isCorrect);
+        ((WordActivity) getActivity()).updateNounList(newList);
+
     }
 }

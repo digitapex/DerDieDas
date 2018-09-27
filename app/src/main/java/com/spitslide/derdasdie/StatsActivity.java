@@ -7,12 +7,14 @@ import android.support.annotation.Nullable;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 
+import java.io.UnsupportedEncodingException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,15 +25,24 @@ public class StatsActivity extends ThemedActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
 
-        setupChart();
+        try {
+            setupChart();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void setupChart() {
+    private void setupChart() throws UnsupportedEncodingException {
+        int nounsCount = FileUtils.getNounsCount(this);
         LineChart chart = findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<>();
-
+        List<Float> scores = new DatabaseUtil(this).getAllScores();
         // TODO - if 0 entries
-        entries.add(new Entry(1, 1));
+        for (int i = 0; i < scores.size(); i++) {
+            float percent = scores.get(i) / nounsCount;
+            entries.add(new Entry(i, percent));
+        }
+
 
         LineDataSet dataSet = new LineDataSet(entries, "");
         dataSet.setDrawCircles(false);
@@ -55,7 +66,7 @@ public class StatsActivity extends ThemedActivity {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
                 DecimalFormat df = new DecimalFormat();
-                df.setMaximumFractionDigits(1);
+                df.setMaximumFractionDigits(4);
                 return df.format(value) + " %";
             }
         });

@@ -4,6 +4,7 @@ package com.spitslide.derdasdie;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -23,26 +24,35 @@ public class DatabaseUtil {
     }
 
 
-    public void addScore(int score) {
+    public void addScore(float score) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("score", score);
         database.insert(SCORES_TABLE, null, contentValues);
     }
 
-    public Cursor getAllScores() {
+    public List<Float> getAllScores() {
         String[] columns = new String[]{"score"};
-        return database.query(SCORES_TABLE, columns, null, null, null, null, null);
+        Cursor cursor =  database.query(SCORES_TABLE, columns, null, null, null, null, null);
+        if (cursor == null) {
+            return null;
+        }
+
+        List<Float> scores = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            scores.add(cursor.getFloat(0));
+        }
+        cursor.close();
+        return scores;
     }
 
-    public int getLastScore() {
+    public float getLastScore() {
         String[] columns = new String[]{"score"};
-        String orderBy = "score DESC";
+        String orderBy = "_id DESC";
         String limit = "1";
         Cursor cursor = database.query(SCORES_TABLE, columns, null, null, null, null, orderBy, limit);
-        int lastScore;
-        if (cursor != null) {
-            cursor.moveToFirst();
-            lastScore = cursor.getInt(0);
+        float lastScore;
+        if (cursor != null && cursor.moveToFirst()) {
+            lastScore = cursor.getFloat(0);
             cursor.close();
         } else {
             lastScore = 0;
@@ -83,6 +93,8 @@ public class DatabaseUtil {
         return nouns;
     }
 
+
+
     public Noun getFirstNoun(){
         String[] columns = new String[]{"noun", "gender", "times_answered"};
         String limit = "1";
@@ -105,7 +117,7 @@ public class DatabaseUtil {
     class DatabaseHelper extends SQLiteOpenHelper {
         private static final String DATABASE_NAME = "Database";
         private static final int DATABASE_VERSION = 1;
-        private static final String CREATE_SCORES_TABLE = "CREATE TABLE IF NOT EXISTS " + SCORES_TABLE + " (_id INTEGER PRIMARY KEY, score INTEGER);";
+        private static final String CREATE_SCORES_TABLE = "CREATE TABLE IF NOT EXISTS " + SCORES_TABLE + " (_id INTEGER PRIMARY KEY, score REAL);";
         private static final String CREATE_NOUNS_TABLE = "CREATE TABLE IF NOT EXISTS " + NOUNS_TABLE + " (_id INTEGER PRIMARY KEY, noun TEXT, gender TEXT, times_answered INTEGER);";
 
         DatabaseHelper(Context context) {

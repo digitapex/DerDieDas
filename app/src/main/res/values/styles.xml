@@ -37,6 +37,10 @@
 
     </style>
 
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">?attr/buttonTextNormal</item>
+    </style>
+
 
 
 

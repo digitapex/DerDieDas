@@ -18,7 +18,7 @@ public class StatsActivity extends ThemedActivity {
     private void showDialog(int title, int text) {
         String titleString = getResources().getString(title);
         String textString = getResources().getString(text);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
         builder.setTitle(titleString);
         builder.setMessage(textString);
         builder.setPositiveButton("OK", null);

@@ -1,18 +1,35 @@
 package com.spitslide.derdasdie;
 
 
+import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.io.UnsupportedEncodingException;
 
 public class StatsActivity extends ThemedActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats_simple);
+        try {
+            setWordStats();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
+    private void setWordStats() throws UnsupportedEncodingException {
+        long allNouns = FileUtils.getNounsCount(this);
+        long remainingNouns = new DatabaseUtil(this).getNounsCount();
+        long learnedWords = allNouns - remainingNouns;
+        ((TextView)findViewById(R.id.word_stats)).setText(learnedWords + " / " + allNouns);
+    }
 
 
     private void showDialog(int title, int text) {

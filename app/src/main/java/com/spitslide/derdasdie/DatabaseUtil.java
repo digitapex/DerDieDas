@@ -93,6 +93,10 @@ public class DatabaseUtil {
         return nouns;
     }
 
+    public long getNounsCount() {
+        return DatabaseUtils.queryNumEntries(database, NOUNS_TABLE);
+    }
+
 
 
     public Noun getFirstNoun(){

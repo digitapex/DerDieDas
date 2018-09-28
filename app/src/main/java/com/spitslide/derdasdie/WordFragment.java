@@ -59,7 +59,7 @@ public class WordFragment extends Fragment implements View.OnClickListener {
             pressedButton.setBackgroundResource(R.drawable.button_correct);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, true);
-            updateScore(true);
+//            updateScore(true);
             updateList(true);
         } else {
             int idResource = getResources().getIdentifier(correctGender, "id", getActivity().getPackageName());
@@ -70,7 +70,7 @@ public class WordFragment extends Fragment implements View.OnClickListener {
             pressedButton.setBackgroundResource(R.drawable.button_wrong);
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, false);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
-            updateScore(false);
+//            updateScore(false);
             updateList(false);
 
 
@@ -78,13 +78,13 @@ public class WordFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void updateScore(boolean isCorrect) {
-        DatabaseUtil databaseUtil = new DatabaseUtil(getActivity());
-        SpacedRepetitionModel model = new SpacedRepetitionModel();
-        float oldScore = databaseUtil.getLastScore();
-        float newScore = model.getNewScore(oldScore, currentNoun, isCorrect);
-        databaseUtil.addScore(newScore);
-    }
+//    private void updateScore(boolean isCorrect) {
+//        DatabaseUtil databaseUtil = new DatabaseUtil(getActivity());
+//        SpacedRepetitionModel model = new SpacedRepetitionModel();
+//        float oldScore = databaseUtil.getLastScore();
+//        float newScore = model.getNewScore(oldScore, currentNoun, isCorrect);
+//        databaseUtil.addScore(newScore);
+//    }
 
     private void updateList(boolean isCorrect) {
         SpacedRepetitionModel model = new SpacedRepetitionModel();

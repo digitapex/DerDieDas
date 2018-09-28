@@ -3,6 +3,6 @@
     <string name="half_words_title">Partially Learned</string>
     <string name="full_words_title">Fully Learned</string>
     <string name="half_words_text">\"Partially learned words\" means nouns that have been answered correctly at least once, but not enough times (5 times in a row) to be removed as \"fully learned\". If they are answered wrong before achieving the \"fully learned\" status, they are reset back to \"not learned\".</string>
-    <string name="full_words_text">\"Fully learned words\" means nouns that have been answered correctly 5 times in a row. They are then considered \"fully learned\" and don\'t appear anymore in the practice screen. The ultimate goal should be to \"fully learn\" all nouns.</string>
+    <string name="full_words_text">\"Fully learned words\" means nouns that have been answered correctly 5 times in a row. They are then considered \"fully learned\" and don\'t appear anymore in the practice screen. The ultimate goal should be to \"fully learn\" all nouns.\n\nIf a noun is answered correctly, but then incorrectly before achieving 5 times in a row, it is reset back to 0 and the process of getting 5 times in a row starts again for that noun.</string>
 
 </resources>

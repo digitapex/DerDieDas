@@ -33,7 +33,7 @@ public class StatsChartActivity extends ThemedActivity {
     }
 
     private void setupChart() throws UnsupportedEncodingException {
-        int nounsCount = FileUtils.getNounsCount(this);
+        long nounsCount = FileUtils.getNounsCount(this);
         float lastScore = new DatabaseUtil(this).getLastScore();
         LineChart chart = findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<>();

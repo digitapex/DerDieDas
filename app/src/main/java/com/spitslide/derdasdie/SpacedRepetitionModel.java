@@ -11,25 +11,25 @@ public class SpacedRepetitionModel {
 
     private static final int REPETITION_FOR_WRONG = 10;
     private static final int REPETITION_FOR_CORRECT = 2;
-    private static final int TIMES_TO_ANSWER_TO_REMOVE = 5;
+    private static final int TIMES_TO_ANSWER_TO_REMOVE = 3;
 
-    public float getNewScore(float lastScore, Noun noun, boolean isCorrect){
-        float score = 0;
-        if (!isCorrect) {
-            if (noun.getTimesAnswered() > 0) {
-                score = lastScore == 0 ? 0 : lastScore - 0.5f;
-            } else {
-                score = lastScore;
-            }
-        } else {
-            if (noun.getTimesAnswered() == 0) {
-                score = lastScore + 0.5f;
-            } else if (noun.getTimesAnswered() >= TIMES_TO_ANSWER_TO_REMOVE - 1) {
-                score = lastScore + 0.5f;
-            }
-        }
-        return score;
-    }
+//    public float getNewScore(float lastScore, Noun noun, boolean isCorrect){
+//        float score = 0;
+//        if (!isCorrect) {
+//            if (noun.getTimesAnswered() > 0) {
+//                score = lastScore == 0 ? 0 : lastScore - 0.5f;
+//            } else {
+//                score = lastScore;
+//            }
+//        } else {
+//            if (noun.getTimesAnswered() == 0) {
+//                score = lastScore + 0.5f;
+//            } else if (noun.getTimesAnswered() >= TIMES_TO_ANSWER_TO_REMOVE - 1) {
+//                score = lastScore + 0.5f;
+//            }
+//        }
+//        return score;
+//    }
 
     public List<Noun> getUpdatedNounList(List<Noun> nounList, Noun noun, boolean isCorrect) {
         if (nounList.size() == 0) {

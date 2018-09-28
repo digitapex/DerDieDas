@@ -72,7 +72,7 @@ public class AnimationUtil {
         });
 
         // if correct answer, we do jump and after that slide the new fragment,
-        // if wrong, then we just slide after button flashing
+        // if wrong, we do flash and after that slide the fragment
         if (isCorrectAnswer) {
             nounView.startAnimation(jumpAnim);
         } else {

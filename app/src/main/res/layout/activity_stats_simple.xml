@@ -22,7 +22,7 @@
             android:id="@+id/fullWords"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/help2"
+            android:src="@drawable/help"
             android:background="@android:color/transparent"
             android:onClick="onFullWords"/>
         <TextView

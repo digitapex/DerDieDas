@@ -2,7 +2,6 @@ package com.spitslide.derdasdie;
 
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,14 +13,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import static android.media.CamcorderProfile.get;
-
 public class WordFragment extends Fragment implements View.OnClickListener {
 
     private String correctGender;
     TextView nounView;
     private View v;
-    private String noun;
     private Noun currentNoun;
     private List<Noun> currentNounList;
 
@@ -40,12 +36,9 @@ public class WordFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        List<Noun> nouns = new DatabaseUtil(getActivity()).getAllNouns();
-//        Noun random = nouns.get(new Random().nextInt(nouns.size()));
-//        currentNoun = new DatabaseUtil(getActivity()).getFirstNoun();
         currentNounList = ((WordActivity) getActivity()).getCurrentNounList();
         currentNoun = currentNounList.get(0);
-        noun = currentNoun.getNoun();
+        String noun = currentNoun.getNoun();
         correctGender = currentNoun.getGender();
         nounView.setText(noun);
     }
@@ -55,23 +48,20 @@ public class WordFragment extends Fragment implements View.OnClickListener {
         Button pressedButton = (Button) view;
         String pressedButtonGender = getResources().getResourceEntryName(view.getId());
         if (pressedButtonGender.equals(correctGender)) {
-//            nounView.setText(GenderConvert.toFullGender(correctGender) + " " + nounView.getText());
+            updateList(true);
             pressedButton.setBackgroundResource(R.drawable.button_correct);
 //            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, true);
-//            updateScore(true);
-            updateList(true);
         } else {
+            updateList(false);
             int idResource = getResources().getIdentifier(correctGender, "id", getActivity().getPackageName());
             Button correctButton = v.findViewById(idResource);
             AnimationUtil.animateButtonDrawable(getActivity(), correctButton);
             // animating text color not working on real device, but works in emulator, so better to just animate background
 //            AnimationUtil.animateTextColor(correctButton, this);
+//            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             pressedButton.setBackgroundResource(R.drawable.button_wrong);
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, false);
-//            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
-//            updateScore(false);
-            updateList(false);
 
 
 

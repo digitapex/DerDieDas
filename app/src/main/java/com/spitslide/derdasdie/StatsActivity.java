@@ -1,14 +1,11 @@
 package com.spitslide.derdasdie;
 
 
-import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 

@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,13 +68,7 @@ public class DatabaseUtil {
             contentValues.put("noun", noun.getNoun());
             contentValues.put("gender", noun.getGender());
             contentValues.put("times_answered", noun.getTimesAnswered());
-            // TODO - both insert for the first time and update if later
             database.insert(NOUNS_TABLE, null, contentValues);
-//            database.update(NOUNS_TABLE, contentValues, null, null);
-//            int id = (int)database.insertWithOnConflict(NOUNS_TABLE, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
-//            if (id == -1) {
-//                database.update(NOUNS_TABLE, contentValues, null, null);
-//            }
         }
         database.setTransactionSuccessful();
         database.endTransaction();
@@ -136,7 +129,6 @@ public class DatabaseUtil {
 
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
         }
     }
 }

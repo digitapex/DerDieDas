@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdiedas;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

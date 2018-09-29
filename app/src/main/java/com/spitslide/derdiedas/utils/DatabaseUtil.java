@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie.utils;
+package com.spitslide.derdiedas.utils;
 
 
 import android.content.ContentValues;
@@ -8,7 +8,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.spitslide.derdasdie.data.Noun;
+import com.spitslide.derdiedas.data.Noun;
 
 import java.util.ArrayList;
 import java.util.List;

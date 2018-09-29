@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie.ui;
+package com.spitslide.derdiedas.ui;
 
 
 import android.os.Bundle;
@@ -7,9 +7,9 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.TextView;
 
-import com.spitslide.derdasdie.R;
-import com.spitslide.derdasdie.utils.DatabaseUtil;
-import com.spitslide.derdasdie.utils.FileUtils;
+import com.spitslide.derdiedas.R;
+import com.spitslide.derdiedas.utils.DatabaseUtil;
+import com.spitslide.derdiedas.utils.FileUtils;
 
 import java.io.UnsupportedEncodingException;
 

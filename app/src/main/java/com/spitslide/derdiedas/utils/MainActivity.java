@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie.utils;
+package com.spitslide.derdiedas.utils;
 
 
 import android.content.Intent;
@@ -8,12 +8,12 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.spitslide.derdasdie.data.Noun;
-import com.spitslide.derdasdie.R;
-import com.spitslide.derdasdie.ui.SettingsActivity;
-import com.spitslide.derdasdie.ui.StatsActivity;
-import com.spitslide.derdasdie.ui.ThemedActivity;
-import com.spitslide.derdasdie.ui.WordActivity;
+import com.spitslide.derdiedas.data.Noun;
+import com.spitslide.derdiedas.R;
+import com.spitslide.derdiedas.ui.SettingsActivity;
+import com.spitslide.derdiedas.ui.StatsActivity;
+import com.spitslide.derdiedas.ui.ThemedActivity;
+import com.spitslide.derdiedas.ui.WordActivity;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;

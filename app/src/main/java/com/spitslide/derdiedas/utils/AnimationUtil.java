@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie.utils;
+package com.spitslide.derdiedas.utils;
 
 
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import com.spitslide.derdasdie.R;
-import com.spitslide.derdasdie.ui.WordActivity;
+import com.spitslide.derdiedas.R;
+import com.spitslide.derdiedas.ui.WordActivity;
 
 public class AnimationUtil {
 

@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdiedas;
 
 import org.junit.Test;
 

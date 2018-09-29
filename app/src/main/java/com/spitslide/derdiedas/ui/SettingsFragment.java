@@ -1,13 +1,13 @@
-package com.spitslide.derdasdie.ui;
+package com.spitslide.derdiedas.ui;
 
 
 import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
-import com.spitslide.derdasdie.R;
-import com.spitslide.derdasdie.utils.PrefsUtil;
-import com.spitslide.derdasdie.utils.ThemeUtil;
+import com.spitslide.derdiedas.R;
+import com.spitslide.derdiedas.utils.PrefsUtil;
+import com.spitslide.derdiedas.utils.ThemeUtil;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 

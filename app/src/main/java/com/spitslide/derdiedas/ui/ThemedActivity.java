@@ -1,11 +1,11 @@
-package com.spitslide.derdasdie.ui;
+package com.spitslide.derdiedas.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.spitslide.derdasdie.R;
-import com.spitslide.derdasdie.utils.PrefsUtil;
+import com.spitslide.derdiedas.R;
+import com.spitslide.derdiedas.utils.PrefsUtil;
 
 
 public abstract class ThemedActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie.ui;
+package com.spitslide.derdiedas.ui;
 
 
 import android.os.Bundle;
@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.spitslide.derdasdie.data.Noun;
-import com.spitslide.derdasdie.R;
-import com.spitslide.derdasdie.data.SpacedRepetitionModel;
-import com.spitslide.derdasdie.utils.AnimationUtil;
+import com.spitslide.derdiedas.data.Noun;
+import com.spitslide.derdiedas.R;
+import com.spitslide.derdiedas.data.SpacedRepetitionModel;
+import com.spitslide.derdiedas.utils.AnimationUtil;
 
 import java.util.List;
 

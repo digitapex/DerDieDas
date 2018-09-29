@@ -4,7 +4,7 @@ android {
     buildToolsVersion "28.0.2"
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.spitslide.derdasdie"
+        applicationId "com.spitslide.derdiedas"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

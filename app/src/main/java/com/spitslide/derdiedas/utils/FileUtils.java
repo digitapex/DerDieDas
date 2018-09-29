@@ -1,9 +1,9 @@
-package com.spitslide.derdasdie.utils;
+package com.spitslide.derdiedas.utils;
 
 
 import android.content.Context;
 
-import com.spitslide.derdasdie.R;
+import com.spitslide.derdiedas.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

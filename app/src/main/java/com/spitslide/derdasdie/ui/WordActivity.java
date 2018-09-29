@@ -11,7 +11,7 @@ import java.util.List;
 
 public class WordActivity extends ThemedActivity {
 
-    List<Noun> nounList;
+    private List<Noun> nounList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

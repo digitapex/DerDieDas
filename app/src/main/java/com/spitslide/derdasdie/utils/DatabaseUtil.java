@@ -24,44 +24,6 @@ public class DatabaseUtil {
         database = new DatabaseHelper(context).getWritableDatabase();
     }
 
-
-    public void addScore(float score) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("score", score);
-        database.insert(SCORES_TABLE, null, contentValues);
-    }
-
-    public List<Float> getAllScores() {
-        String[] columns = new String[]{"score"};
-        Cursor cursor =  database.query(SCORES_TABLE, columns, null, null, null, null, null);
-        if (cursor == null) {
-            return null;
-        }
-
-        List<Float> scores = new ArrayList<>();
-        while (cursor.moveToNext()) {
-            scores.add(cursor.getFloat(0));
-        }
-        cursor.close();
-        return scores;
-    }
-
-    public float getLastScore() {
-        String[] columns = new String[]{"score"};
-        String orderBy = "_id DESC";
-        String limit = "1";
-        Cursor cursor = database.query(SCORES_TABLE, columns, null, null, null, null, orderBy, limit);
-        float lastScore;
-        if (cursor != null && cursor.moveToFirst()) {
-            lastScore = cursor.getFloat(0);
-            cursor.close();
-        } else {
-            lastScore = 0;
-        }
-        return lastScore;
-    }
-
-
     public void addAllNouns(List<Noun> nouns) {
         database.beginTransaction();
         database.delete(NOUNS_TABLE, null, null);
@@ -90,24 +52,6 @@ public class DatabaseUtil {
 
     public long getNounsCount() {
         return DatabaseUtils.queryNumEntries(database, NOUNS_TABLE);
-    }
-
-
-
-    public Noun getFirstNoun(){
-        String[] columns = new String[]{"noun", "gender", "times_answered"};
-        String limit = "1";
-        Cursor cursor = database.query(NOUNS_TABLE, columns, null, null, null, null, null, limit);
-        Noun noun;
-        if (cursor != null) {
-            cursor.moveToFirst();
-            noun = new Noun(cursor.getString(0), cursor.getString(1), cursor.getInt(0));
-            cursor.close();
-        } else {
-            // TODO - if no more words
-            noun = new Noun("", "", 0);
-        }
-        return noun;
     }
 
 

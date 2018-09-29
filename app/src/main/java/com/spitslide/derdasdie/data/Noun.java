@@ -17,17 +17,11 @@ public class Noun {
         return noun;
     }
 
-    public void setNoun(String noun) {
-        this.noun = noun;
-    }
 
     public String getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 
     public int getTimesAnswered() {
         return timesAnswered;

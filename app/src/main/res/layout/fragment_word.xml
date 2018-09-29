@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +19,7 @@
             android:id="@+id/nounView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Haus"
+            android:text="@string/noun_placeholder"
             android:textColor="?buttonTextNormal"
             android:textSize="50sp"/>
     </LinearLayout>
@@ -39,7 +38,7 @@
             android:background="?attr/button_drawable"
             android:textColor="@drawable/selectors_text_color"
             android:layout_weight="1"
-            android:text="Der"
+            android:text="@string/der"
             android:textSize="20sp"/>
         <Button
             android:id="@+id/n"
@@ -49,7 +48,7 @@
             android:background="?attr/button_drawable"
             android:textColor="@drawable/selectors_text_color"
             android:layout_weight="1"
-            android:text="Das"
+            android:text="@string/das"
             android:textSize="20sp"/>
         <Button
             android:id="@+id/f"
@@ -59,7 +58,7 @@
             android:background="?attr/button_drawable"
             android:textColor="@drawable/selectors_text_color"
             android:layout_weight="1"
-            android:text="Die"
+            android:text="@string/die"
             android:textSize="20sp"/>
     </LinearLayout>
 

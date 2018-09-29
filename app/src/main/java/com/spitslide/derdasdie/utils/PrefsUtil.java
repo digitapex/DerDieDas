@@ -2,7 +2,6 @@ package com.spitslide.derdasdie.utils;
 
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class PrefsUtil {

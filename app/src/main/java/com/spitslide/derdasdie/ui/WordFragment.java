@@ -21,7 +21,7 @@ import java.util.List;
 public class WordFragment extends Fragment implements View.OnClickListener {
 
     private String correctGender;
-    TextView nounView;
+    private TextView nounView;
     private View v;
     private Noun currentNoun;
     private List<Noun> currentNounList;

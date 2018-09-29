@@ -14,7 +14,7 @@
         android:layout_height="50dp"
         android:background="?attr/button_drawable"
         android:textColor="@drawable/selectors_text_color"
-        android:text="Practice"
+        android:text="@string/practice"
         android:onClick="onButton"
         android:textSize="20sp"/>
     <Button
@@ -24,7 +24,7 @@
         android:layout_height="50dp"
         android:background="?attr/button_drawable"
         android:textColor="@drawable/selectors_text_color"
-        android:text="Settings"
+        android:text="@string/settings"
         android:onClick="onButton"
         android:textSize="20sp"/>
     <Button
@@ -34,7 +34,7 @@
         android:layout_height="50dp"
         android:background="?attr/button_drawable"
         android:textColor="@drawable/selectors_text_color"
-        android:text="Stats"
+        android:text="@string/stats"
         android:onClick="onButton"
         android:textSize="20sp"/>
 </LinearLayout>

@@ -2,23 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    >
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+    android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fully learned words / All words:"
+            android:text="@string/fully_learned_words_all_words"
             android:textSize="20sp"
             android:padding="20dp"
             />
         <ImageButton
+            android:contentDescription="@string/help"
             android:id="@+id/fullWords"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,9 +22,8 @@
             android:id="@+id/word_stats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="123 / 456"
+            android:text="@string/placeholder"
             android:textSize="20sp"
             android:padding="20dp"
             />
-    </LinearLayout>
 </LinearLayout>

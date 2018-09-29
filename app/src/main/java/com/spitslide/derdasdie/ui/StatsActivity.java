@@ -32,20 +32,15 @@ public class StatsActivity extends ThemedActivity {
         ((TextView)findViewById(R.id.word_stats)).setText(learnedWords + " / " + allNouns);
     }
 
-
-    private void showDialog(int title, int text) {
-        String titleString = getResources().getString(title);
-        String textString = getResources().getString(text);
+    public void onFullWords(View view) {
+        String titleString = getResources().getString(R.string.full_words_title);
+        String textString = getResources().getString(R.string.full_words_text);
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
         builder.setTitle(titleString);
         builder.setMessage(textString);
         builder.setPositiveButton("OK", null);
         AlertDialog dialog = builder.create();
         dialog.show();
-    }
-
-    public void onFullWords(View view) {
-        showDialog(R.string.full_words_title, R.string.full_words_text);
     }
 
 

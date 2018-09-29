@@ -2,5 +2,15 @@
     <string name="app_name">DerDasDie</string>
     <string name="full_words_title">Fully Learned</string>
     <string name="full_words_text">\"Fully learned words\" means nouns that have been answered correctly 5 times in a row. They are then considered \"fully learned\" and don\'t appear anymore in the practice screen. The ultimate goal should be to \"fully learn\" all nouns.\n\nIf a noun is answered correctly, but then incorrectly before achieving 5 times in a row, it is reset back to 0 and the process of getting 5 times in a row starts again for that noun.</string>
+    <string name="help">Help</string>
+    <string name="fully_learned_words_all_words">Fully learned words / All words:</string>
+    <string name="practice">Practice</string>
+    <string name="settings">Settings</string>
+    <string name="stats">Stats</string>
+    <string name="placeholder">123 / 456</string>
+    <string name="noun_placeholder">Haus</string>
+    <string name="der">Der</string>
+    <string name="das">Das</string>
+    <string name="die">Die</string>
 
 </resources>

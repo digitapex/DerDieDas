@@ -6,6 +6,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="android:windowBackground">@android:color/background_light</item>
 
         <item name="buttonTextNormal">@android:color/black</item>
         <item name="buttonTextPressed">@android:color/white</item>
@@ -13,16 +14,18 @@
         <item name="button_drawable">@drawable/selectors_background_light</item>
         <item name="button_animation">@drawable/button_animation_correct_light</item>
 
+        <item name="dialogBackground">@color/dialogBackgroundLight</item>
+
 
 
     </style>
 
     <style name="DarkTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDarkTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDarkTheme</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-        <item name="android:background">@android:color/black</item>
+        <item name="android:windowBackground">@color/windowBackgroundDark</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textColorSecondary">#FFFFFF</item>
 
@@ -33,10 +36,14 @@
         <item name="button_drawable">@drawable/selectors_background_dark</item>
         <item name="button_animation">@drawable/button_animation_correct_dark</item>
 
+        <item name="dialogBackground">@color/dialogBackgroundDark</item>
+
+
     </style>
 
     <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:textColorPrimary">?attr/buttonTextNormal</item>
+        <item name="android:windowBackground">?attr/dialogBackground</item>
     </style>
 
 </resources>

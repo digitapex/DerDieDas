@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="com.spitslide.derdasdie.WordActivity">
+    tools:context="com.spitslide.derdasdie.ui.WordActivity">
 
     <FrameLayout
         android:id="@+id/frame"

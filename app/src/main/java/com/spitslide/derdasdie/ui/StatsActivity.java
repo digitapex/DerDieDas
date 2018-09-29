@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdasdie.ui;
 
 
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.TextView;
+
+import com.spitslide.derdasdie.R;
+import com.spitslide.derdasdie.utils.DatabaseUtil;
+import com.spitslide.derdasdie.utils.FileUtils;
 
 import java.io.UnsupportedEncodingException;
 
@@ -38,10 +42,6 @@ public class StatsActivity extends ThemedActivity {
         builder.setPositiveButton("OK", null);
         AlertDialog dialog = builder.create();
         dialog.show();
-    }
-
-    public void onHalfWords(View view) {
-        showDialog(R.string.half_words_title, R.string.half_words_text);
     }
 
     public void onFullWords(View view) {

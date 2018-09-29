@@ -1,7 +1,11 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdasdie.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+
+import com.spitslide.derdasdie.data.Noun;
+import com.spitslide.derdasdie.R;
+import com.spitslide.derdasdie.utils.DatabaseUtil;
 
 import java.util.List;
 

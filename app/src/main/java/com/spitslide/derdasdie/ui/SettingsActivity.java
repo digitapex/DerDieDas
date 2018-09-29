@@ -1,8 +1,10 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdasdie.ui;
 
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+
+import com.spitslide.derdasdie.R;
 
 public class SettingsActivity extends ThemedActivity{
     @Override

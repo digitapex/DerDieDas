@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdasdie.data;
 
 
 public class Noun {

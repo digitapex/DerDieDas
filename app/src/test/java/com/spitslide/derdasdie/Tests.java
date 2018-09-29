@@ -1,10 +1,10 @@
 package com.spitslide.derdasdie;
 
 
-import org.junit.Before;
-import org.junit.BeforeClass;
+import com.spitslide.derdasdie.data.Noun;
+import com.spitslide.derdasdie.data.SpacedRepetitionModel;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class Tests {
 //SpacedRepetitionModel model;

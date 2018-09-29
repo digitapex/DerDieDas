@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="4"
 
-    tools:context="com.spitslide.derdasdie.WordActivity">
+    tools:context="com.spitslide.derdasdie.ui.WordActivity">
 
 
     <LinearLayout

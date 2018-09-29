@@ -1,4 +1,4 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdasdie.ui;
 
 
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.spitslide.derdasdie.data.Noun;
+import com.spitslide.derdasdie.R;
+import com.spitslide.derdasdie.data.SpacedRepetitionModel;
+import com.spitslide.derdasdie.utils.AnimationUtil;
 
 import java.util.List;
 
@@ -50,16 +55,12 @@ public class WordFragment extends Fragment implements View.OnClickListener {
         if (pressedButtonGender.equals(correctGender)) {
             updateList(true);
             pressedButton.setBackgroundResource(R.drawable.button_correct);
-//            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, true);
         } else {
             updateList(false);
             int idResource = getResources().getIdentifier(correctGender, "id", getActivity().getPackageName());
             Button correctButton = v.findViewById(idResource);
             AnimationUtil.animateButtonDrawable(getActivity(), correctButton);
-            // animating text color not working on real device, but works in emulator, so better to just animate background
-//            AnimationUtil.animateTextColor(correctButton, this);
-//            pressedButton.setTextColor(ThemeUtil.getPressedButtonTxtColorAttr(this));
             pressedButton.setBackgroundResource(R.drawable.button_wrong);
             AnimationUtil.animateJumpAndSlide(getActivity(), nounView, false);
 
@@ -67,14 +68,6 @@ public class WordFragment extends Fragment implements View.OnClickListener {
 
         }
     }
-
-//    private void updateScore(boolean isCorrect) {
-//        DatabaseUtil databaseUtil = new DatabaseUtil(getActivity());
-//        SpacedRepetitionModel model = new SpacedRepetitionModel();
-//        float oldScore = databaseUtil.getLastScore();
-//        float newScore = model.getNewScore(oldScore, currentNoun, isCorrect);
-//        databaseUtil.addScore(newScore);
-//    }
 
     private void updateList(boolean isCorrect) {
         SpacedRepetitionModel model = new SpacedRepetitionModel();

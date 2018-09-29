@@ -1,9 +1,12 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdasdie.utils;
 
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.TypedValue;
+
+import com.spitslide.derdasdie.R;
+import com.spitslide.derdasdie.utils.PrefsUtil;
 
 public class ThemeUtil {
 

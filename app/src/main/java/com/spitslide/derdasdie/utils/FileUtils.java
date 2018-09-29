@@ -1,7 +1,9 @@
-package com.spitslide.derdasdie;
+package com.spitslide.derdasdie.utils;
 
 
 import android.content.Context;
+
+import com.spitslide.derdasdie.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -9,7 +11,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 public class FileUtils {
-    static String getNounList(Context context) throws UnsupportedEncodingException {
+    public static String getNounList(Context context) throws UnsupportedEncodingException {
         InputStream inputStream = context.getResources().openRawResource(R.raw.list_nouns);
         ByteArrayOutputStream result = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
@@ -28,7 +30,7 @@ public class FileUtils {
         return string.split("\\r?\\n");
     }
 
-    static long getNounsCount(Context context) throws UnsupportedEncodingException {
+    public static long getNounsCount(Context context) throws UnsupportedEncodingException {
         return getLines(getNounList(context)).length;
     }
 }

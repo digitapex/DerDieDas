@@ -711,12 +711,10 @@ Aufnahme,f
 Süden,m
 Ja,n
 Auseinandersetzung,f
-Tote,adjektivische Deklination
 Sanierung,f
 Beteiligung,f
 Alternative,f
 Kommune,f
-Beschäftigte,adjektivische Deklination
 Auszeichnung,f
 Anwalt,m
 Eintracht,f
@@ -1161,7 +1159,6 @@ Dritte,f
 Mühe,f
 Wettkampf,m
 Großteil,m
-Arbeitslose,adjektivische Deklination
 Front,f
 Abfahrt,f
 Analyse,f
@@ -1625,7 +1622,6 @@ Demonstrant,m
 Division,f
 Anregung,f
 Wehr,n
-Gerade,adjektivische Deklination,
 Rhythmus,m
 Denken,n
 Stichwort,n
@@ -1969,7 +1965,6 @@ Bibel,f
 Leserbrief,m
 Laune,f
 Häftling,m
-Fraktionsvorsitzende,adjektivische Deklination
 Zusage,f
 Freistoß,m
 Kanzlerin,f
@@ -2914,7 +2909,6 @@ Skepsis,f
 Sprint,m
 Tele,n
 Indiz,n
-Geliebte,adjektivische Deklination
 Kandidatin,f
 Annäherung,f
 Realisierung,f
@@ -3077,7 +3071,6 @@ Einspruch,m
 Freiherr,m
 Abwesenheit,f
 Vulkan,m
-Überlebende,adjektivische Deklination
 Einlass,m
 Vorbehalt,m
 Untergrund,m
@@ -4934,7 +4927,6 @@ Barrel,n
 Raumfahrt,f
 Nationalist,m
 Postfach,n
-Vorgesetzte,adjektivische Deklination
 Minimum,n
 Selbstverständnis,n
 Preuße,m
@@ -6686,7 +6678,6 @@ Rebellion,f
 Naturkatastrophe,f
 Jaguar,m
 Skiverband,m
-Staatsangehörige,adjektivische Deklination
 Chi,n
 Einfuhr,f
 Ehepartner,m
@@ -6962,7 +6953,6 @@ Hinterbliebene,f
 Specht,m
 Gefängnisstrafe,f
 Befriedigung,f
-Fraktionsvorsitzender,adjektivische Deklination
 Ausverkauf,m
 Notlage,f
 Außenhandel,m
@@ -7035,7 +7025,6 @@ Sterbehilfe,f
 Drink,m
 Magier,m
 Stimmrecht,n
-Wahlberechtigter,adjektivische Deklination
 Trockenheit,f
 Zweirad,n
 Amtsleiter,m
@@ -7814,7 +7803,6 @@ Milliardenhöhe,f
 Weitergabe,f
 Vierer,m
 Sozialarbeit,f
-Zielgerade,adjektivische Deklination,
 Couch,f
 Abfallwirtschaft,f
 Streiterei,f
@@ -9054,7 +9042,6 @@ Zivilschutz,m
 Klangkörper,m
 Rücksichtnahme,f
 Gesamtvolumen,n
-Aufsichtsratsvorsitzender,adjektivische Deklination
 Qualm,m
 Anrufbeantworter,m
 Originalität,f
@@ -9613,7 +9600,6 @@ Française,f
 Mitfavorit,m
 Kolleg,n
 Großbaustelle,f
-Weltjugendtag,Eigenname
 Raubtier,n
 Tragweite,f
 Grenzkontrolle,f
@@ -9815,7 +9801,6 @@ Tuba,f
 Häme,f
 Kriminalroman,m
 Perser,m
-Großer,adjektivische Deklination
 Ruch,m
 Leichtathletin,f
 Angstgegner,m

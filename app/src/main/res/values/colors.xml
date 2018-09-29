@@ -6,7 +6,7 @@
     <color name="colorPrimaryDarkDarkTheme">#111111</color>
     <color name="colorAccent">#FF4081</color>
     <color name="windowBackgroundLight">#F5F5F5</color>
-    <color name="windowBackgroundDark">#1F000000</color>
+    <color name="windowBackgroundDark">#000000</color>
     <color name="dialogBackgroundDark">#212121</color>
     <color name="dialogBackgroundLight">#FFFFFF</color>
     <color name="correctButton">#3F51B5</color>

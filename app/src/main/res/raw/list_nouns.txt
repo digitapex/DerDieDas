@@ -32,7 +32,6 @@ Weg,m
 Thema,n
 Geschichte,f
 Welt,f
-Für,n
 Mitglied,n
 Straße,f
 Monat,m
@@ -44,7 +43,6 @@ Punkt,m
 Verein,m
 Minute,f
 Polizei,f
-Ich,n
 September,m
 Problem,n
 Unternehmen,n
@@ -92,7 +90,6 @@ Werk,n
 Information,f
 Art,f
 Region,f
-Wie,n
 Hand,f
 Buch,n
 Staat,m
@@ -121,10 +118,8 @@ Zukunft,f
 Einsatz,m
 Firma,f
 Bürgermeister,m
-Deutsche,n
 Diskussion,f
 Folge,f
-Aber,n
 Möglichkeit,f
 Spieler,m
 Entscheidung,f
@@ -144,7 +139,6 @@ Bank,f
 Grüne,n
 Sache,f
 Politik,f
-Deutsch,n
 Wochenende,n
 Hilfe,f
 Telefon,n
@@ -213,7 +207,6 @@ Karte,f
 Kunde,m
 Kampf,m
 Bühne,f
-Man,n
 Schweizer,m
 Satz,m
 Quelle,f
@@ -242,7 +235,6 @@ Partie,f
 Sprache,f
 Kultur,f
 Teilnehmer,m
-Berliner,m
 Vertrag,m
 Erfahrung,f
 Runde,f
@@ -333,7 +325,6 @@ Gemeinderat,m
 Parlament,n
 Experte,m
 Schaden,m
-Aus,n
 Regel,f
 Rat,m
 Anlage,f
@@ -532,7 +523,6 @@ Beamter,m
 Journalist,m
 Sänger,m
 Vorteil,m
-Unter,m
 Generation,f
 Suche,f
 Krise,f
@@ -545,7 +535,6 @@ Polizist,m
 Schutz,m
 Bundestag,m
 Treffer,m
-Jetzt,n
 Job,m
 Regisseur,m
 Tradition,f
@@ -573,7 +562,6 @@ Verletzung,f
 Stadtteil,m
 Verantwortung,f
 Kino,n
-Ob,m
 Arm,m
 Garten,m
 Fläche,f
@@ -705,11 +693,9 @@ Auskunft,f
 Erkenntnis,f
 Wand,f
 Festival,n
-Sein,n
 Autofahrer,m
 Aufnahme,f
 Süden,m
-Ja,n
 Auseinandersetzung,f
 Sanierung,f
 Beteiligung,f
@@ -751,7 +737,6 @@ Auftakt,m
 Innenstadt,f
 Tipp,m
 Ausdruck,m
-Nu,n
 Wahrheit,f
 Fluss,m
 Feier,f
@@ -851,7 +836,6 @@ Wolf,m
 Landschaft,f
 Verständnis,n
 Schwierigkeit,f
-Drei,f
 Halbzeit,f
 Haar,n
 Test,m
@@ -876,7 +860,6 @@ Verbesserung,f
 Marke,f
 Unternehmer,m
 Pflanze,f
-Wikipedia,f
 Linke,f
 Viertel,n
 Ausländer,m
@@ -887,14 +870,12 @@ Zitat,n
 Jahrgang,m
 Seele,f
 Wahlkampf,m
-Rot,n
 Radio,n
 Flüchtling,m
 Van,m
 Haltung,f
 Erwartung,f
 Wähler,m
-Mär,f
 Forum,n
 Phase,f
 Freundin,f
@@ -909,7 +890,6 @@ Anzahl,f
 Spannung,f
 Grundstück,n
 Sendung,f
-Mehr,n
 Rücken,m
 Werbung,f
 Schülerin,f
@@ -950,7 +930,6 @@ Kritiker,m
 Vorhaben,n
 Schlag,m
 Sozialdemokrat,m
-Weiß,n
 Kenntnis,f
 Trotz,m
 Summe,f

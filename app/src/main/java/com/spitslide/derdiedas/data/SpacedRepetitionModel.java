@@ -6,8 +6,8 @@ import java.util.List;
 public class SpacedRepetitionModel {
 
     private static final int REPETITION_FOR_WRONG = 10;
-    private static final int REPETITION_FOR_CORRECT = 2;
-    private static final int TIMES_TO_ANSWER_TO_REMOVE = 3;
+    private static final int REPETITION_FOR_CORRECT = 20;
+    private static final int TIMES_TO_ANSWER_TO_REMOVE = 5;
 
 
     public List<Noun> getUpdatedNounList(List<Noun> nounList, Noun noun, boolean isCorrect) {

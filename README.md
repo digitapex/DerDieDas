@@ -8,7 +8,7 @@ Try the app by using the apk under [releases](https://github.com/digitapex/DerDi
 
 Also available on Google Play Store:
 
-![Screenshot 1](/screenshots/Screenshot_01.png?raw=true)
+![Screenshot 1](/screenshots/Screenshot_01.png?raw=true | width=300)
 ![Screenshot 2](/screenshots/Screenshot_02.png?raw=true)
 ![Screenshot 3](/screenshots/Screenshot_03.png?raw=true)
 ![Screenshot 4](/screenshots/Screenshot_04.png?raw=true)

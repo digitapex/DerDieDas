@@ -6,7 +6,7 @@ Contains almost 10,000 German nouns.
 
 Try the app by using the apk under [releases](https://github.com/digitapex/DerDieDas/releases).
 
-Also available on Google Play Store:
+<a href='https://play.google.com/store/apps/details?id=com.spitslide.derdiedas'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 
 <p align="center">
   <img src="/screenshots/Screenshot_01.png" width="250">

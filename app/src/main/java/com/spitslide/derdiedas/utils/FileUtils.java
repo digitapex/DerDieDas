@@ -26,7 +26,7 @@ public class FileUtils {
         return result.toString("UTF-8");
     }
 
-    static String[] getLines(String string){
+    public static String[] getLines(String string){
         return string.split("\\r?\\n");
     }
 

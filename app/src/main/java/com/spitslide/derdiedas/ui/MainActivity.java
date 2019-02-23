@@ -1,4 +1,4 @@
-package com.spitslide.derdiedas.utils;
+package com.spitslide.derdiedas.ui;
 
 
 import android.content.Intent;
@@ -10,10 +10,9 @@ import android.view.View;
 
 import com.spitslide.derdiedas.data.Noun;
 import com.spitslide.derdiedas.R;
-import com.spitslide.derdiedas.ui.SettingsActivity;
-import com.spitslide.derdiedas.ui.StatsActivity;
-import com.spitslide.derdiedas.ui.ThemedActivity;
-import com.spitslide.derdiedas.ui.WordActivity;
+import com.spitslide.derdiedas.utils.DatabaseUtil;
+import com.spitslide.derdiedas.utils.FileUtils;
+import com.spitslide.derdiedas.utils.ThemeUtil;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;

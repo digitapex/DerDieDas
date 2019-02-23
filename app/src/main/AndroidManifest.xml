@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/germany_flag_128"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.spitslide.derdiedas.utils.MainActivity">
+        <activity android:name="com.spitslide.derdiedas.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

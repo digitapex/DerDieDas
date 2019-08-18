@@ -37,4 +37,28 @@
         android:text="@string/stats"
         android:onClick="onButton"
         android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:tag="share"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="?attr/button_drawable"
+            android:textColor="@drawable/selectors_text_color"
+            android:text="@string/share"
+            android:onClick="onButton"/>
+        <Button
+            android:tag="rate"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="?attr/button_drawable"
+            android:textColor="@drawable/selectors_text_color"
+            android:text="@string/rate"
+            android:onClick="onButton"/>
+    </LinearLayout>
+
 </LinearLayout>

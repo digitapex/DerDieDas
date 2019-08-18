@@ -1,8 +1,10 @@
 package com.spitslide.derdiedas.ui;
 
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -38,6 +40,24 @@ public class MainActivity extends ThemedActivity {
                 break;
             case "stats":
                 startActivity(new Intent(this, StatsActivity.class));
+                break;
+            case "share":
+                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.recommend_app));
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.recommend_text));
+                startActivity(Intent.createChooser(shareIntent, getString(R.string.recommend_title)));
+                break;
+            case "rate":
+                Uri uriMarket = Uri.parse(getString(R.string.rate_app_market));
+                Uri uriWeb = Uri.parse(getString(R.string.rate_app_web));
+                Intent rateIntentMarket = new Intent(Intent.ACTION_VIEW, uriMarket);
+                Intent rateIntentWeb = new Intent(Intent.ACTION_VIEW, uriWeb);
+                try {
+                    startActivity(rateIntentMarket);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(rateIntentWeb);
+                }
                 break;
         }
 

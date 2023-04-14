@@ -2658,7 +2658,8 @@ Mitbürger,m
 Donnerstagabend,m
 Model,n
 Spender,m
-Rheintal,Toponym
+Rheintal,n
+Toponym,n
 Aids,n
 Neuling,m
 Geschick,n
